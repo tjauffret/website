@@ -2269,24 +2269,19 @@ select.form-control:not([size]):not([multiple]) {
 	margin: 0px auto;
 }
 
-.newsletter-form input{
-	width: 75%;
+.newsletter-form .input-container input{
+	width: 33.3%;
 	float: left;
 	border-radius: 0;
 }
 
 .newsletter-form button{
-	width: 25%;
-	float: right;
-	border-radius: 0;
+	width: 100%; 
+	border-radius: 50px;
 	padding: 15px 20px !important;
 }
 
-.newsletter-wrapper{
-	border-radius: 50px;
-	overflow: hidden;
-	height: 56px;
-}
+
 
 .newsletter-form button img{
 	margin-right: 10px;
@@ -2362,10 +2357,10 @@ footer{
 
 @media(max-width: 768px) {
 	.newsletter-form button{
-		width: 40%;
+		/* width: 40%; */
 	}
 	.newsletter-form input{
-		width: 60%;
+		/* width: 60%; */
 	}
 
 	.navbar-brand{
