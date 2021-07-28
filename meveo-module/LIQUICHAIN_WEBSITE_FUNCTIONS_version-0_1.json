@@ -1,0 +1,177 @@
+[ {
+  "active" : true,
+  "code" : "LIQUICHAIN_WEBSITE_FUNCTIONS",
+  "description" : "services for the liquichain website",
+  "license" : "GPL",
+  "currentVersion" : "0.1",
+  "transient" : true,
+  "codeOnly" : false,
+  "inDraft" : true,
+  "moduleItems" : [ {
+    "dtoClassName" : "org.meveo.api.dto.CustomEntityTemplateDto",
+    "dtoData" : {
+      "code" : "websiteContact",
+      "name" : "Website Contact",
+      "description" : "Website Contact",
+      "customEntityCategoryCode" : "liquichain",
+      "availableStorages" : [ "SQL" ],
+      "sqlStorageConfiguration" : {
+        "storeAsTable" : true
+      },
+      "samples" : [ ],
+      "audited" : false,
+      "fields" : [ {
+        "code" : "email",
+        "description" : "email",
+        "fieldType" : "STRING",
+        "accountLevel" : "CE_websiteContact",
+        "appliesTo" : "CE_websiteContact",
+        "useInheritedAsDefaultValue" : false,
+        "storageType" : "SINGLE",
+        "valueRequired" : false,
+        "versionable" : false,
+        "triggerEndPeriodEvent" : false,
+        "listValues" : { },
+        "allowEdit" : true,
+        "hideOnNew" : false,
+        "maxValue" : 100,
+        "contentTypes" : [ ],
+        "fileExtensions" : [ ],
+        "saveOnExplorer" : false,
+        "guiPosition" : "tab:Website Contact:0;field:2",
+        "identifier" : false,
+        "storages" : [ "SQL" ],
+        "samples" : [ ],
+        "summary" : true,
+        "audited" : false,
+        "persisted" : true,
+        "filter" : true,
+        "unique" : false,
+        "matrixColumns" : [ ]
+      }, {
+        "code" : "firstname",
+        "description" : "firstname",
+        "fieldType" : "STRING",
+        "accountLevel" : "CE_websiteContact",
+        "appliesTo" : "CE_websiteContact",
+        "useInheritedAsDefaultValue" : false,
+        "storageType" : "SINGLE",
+        "valueRequired" : false,
+        "versionable" : false,
+        "triggerEndPeriodEvent" : false,
+        "listValues" : { },
+        "allowEdit" : true,
+        "hideOnNew" : false,
+        "maxValue" : 50,
+        "contentTypes" : [ ],
+        "fileExtensions" : [ ],
+        "saveOnExplorer" : false,
+        "guiPosition" : "tab:Website Contact:0;field:0",
+        "identifier" : false,
+        "storages" : [ "SQL" ],
+        "samples" : [ ],
+        "summary" : true,
+        "audited" : false,
+        "persisted" : true,
+        "filter" : true,
+        "unique" : false,
+        "matrixColumns" : [ ]
+      }, {
+        "code" : "lastname",
+        "description" : "lastname",
+        "fieldType" : "STRING",
+        "accountLevel" : "CE_websiteContact",
+        "appliesTo" : "CE_websiteContact",
+        "useInheritedAsDefaultValue" : false,
+        "storageType" : "SINGLE",
+        "valueRequired" : false,
+        "versionable" : false,
+        "triggerEndPeriodEvent" : false,
+        "listValues" : { },
+        "allowEdit" : true,
+        "hideOnNew" : false,
+        "maxValue" : 50,
+        "contentTypes" : [ ],
+        "fileExtensions" : [ ],
+        "saveOnExplorer" : false,
+        "guiPosition" : "tab:Website Contact:0;field:1",
+        "identifier" : false,
+        "storages" : [ "SQL" ],
+        "samples" : [ ],
+        "summary" : true,
+        "audited" : false,
+        "persisted" : true,
+        "filter" : true,
+        "unique" : false,
+        "matrixColumns" : [ ]
+      } ],
+      "actions" : [ ]
+    }
+  }, {
+    "dtoClassName" : "org.meveo.api.dto.technicalservice.endpoint.EndpointDto",
+    "dtoData" : {
+      "code" : "persistContact",
+      "secured" : false,
+      "checkPathParams" : false,
+      "serviceCode" : "org.meveo.script.WebsiteContactScript",
+      "synchronous" : true,
+      "method" : "GET",
+      "parameterMappings" : [ {
+        "serviceParameter" : "firstname",
+        "multivalued" : false,
+        "parameterName" : "firstname",
+        "defaultValue" : null,
+        "valueRequired" : false
+      }, {
+        "serviceParameter" : "lastname",
+        "multivalued" : false,
+        "parameterName" : "lastname",
+        "defaultValue" : null,
+        "valueRequired" : false
+      }, {
+        "serviceParameter" : "email",
+        "multivalued" : false,
+        "parameterName" : "email",
+        "defaultValue" : null,
+        "valueRequired" : false
+      } ],
+      "pathParameters" : [ ],
+      "roles" : [ ],
+      "serializeResult" : false,
+      "contentType" : "application/json",
+      "basePath" : "persistContact",
+      "path" : "/"
+    }
+  }, {
+    "dtoClassName" : "org.meveo.api.dto.ScriptInstanceDto",
+    "dtoData" : {
+      "active" : true,
+      "code" : "org.meveo.script.WebsiteContactScript",
+      "description" : "persist website contact",
+      "inputs" : [ {
+        "name" : "firstname",
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "lastname",
+        "type" : "String",
+        "description" : null
+      }, {
+        "name" : "email",
+        "type" : "String",
+        "description" : null
+      } ],
+      "outputs" : [ ],
+      "generateOutputs" : false,
+      "type" : "JAVA",
+      "transactionType" : "SAME",
+      "script" : "package org.meveo.script;\r\n\r\nimport java.util.Map;\r\n\r\nimport org.meveo.service.script.Script;\r\nimport org.meveo.admin.exception.BusinessException;\r\nimport javax.inject.Inject;\r\nimport org.meveo.model.customEntities.websiteContact;\r\nimport org.meveo.api.exception.BusinessApiException;\r\nimport org.meveo.model.storage.Repository;\r\nimport org.meveo.service.storage.RepositoryService;\r\nimport org.meveo.api.persistence.CrossStorageApi;\r\n\r\npublic class WebsiteContactScript extends Script {\r\n  \t@Inject\r\n\tprivate CrossStorageApi crossStorageApi;\r\n\t\r\n    @Inject\r\n\tprivate RepositoryService repositoryService;\r\n  \r\n    private String firstname;\r\n    private String lastname;\r\n    private String email;\r\n  \r\n    public void setFirstname(String firstname){\r\n      this.firstname=firstname;\r\n    }\r\n\t\r\n    public void setLastname(String lastname){\r\n      this.lastname=lastname;\r\n    }\r\n  \r\n    public void setEmail(String email){\r\n      this.email=email;\r\n    }\r\n\t@Override\r\n\tpublic void execute(Map<String, Object> parameters) throws BusinessException {\r\n\t\twebsiteContact cei = new websiteContact();\r\n      \tcei.setFirstname(firstname);\r\n      \tcei.setLastname(lastname);\r\n      \tcei.setEmail(email);\r\n        Repository defaultRepo = repositoryService.findDefaultRepository();\r\n        try{\r\n           String uuid = crossStorageApi.createOrUpdate(defaultRepo, cei);\r\n           System.out.println(\"websiteContact instance \" + uuid + \" created / updated\");\r\n        } catch(Exception ex){\r\n           throw new BusinessException(ex);\r\n        }\r\n\t}\r\n\t\r\n}",
+      "executionRoles" : [ ],
+      "sourcingRoles" : [ ],
+      "mavenDependencies" : [ ],
+      "importScriptInstances" : [ ]
+    }
+  } ],
+  "moduleDependencies" : [ ],
+  "moduleFiles" : [ ]
+} ]
