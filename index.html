@@ -389,19 +389,24 @@
             let firstname = document.getElementById("join-form-firstname").value;
             if (!firstname) {
               alert("please set your firstname");
+              return;
             }
             let lastname = document.getElementById("join-form-lastname").value;
             if (!lastname) {
               alert("please set your lastname");
+              return;
             }
             let email = document.getElementById("join-form-email").value;
             if (!email) {
               alert("please set your email");
+              return;
             }
             if(!emailexpr.test(email);){
               alert("invalid email");
+              return;
             }
-            let email = await fetch('https://account.liquichain.io/meveo/rest/persistContact', {
+            url+="?firstname="+encodeURI(firstname)+"&lastname="+encodeURI(lastname)+"&email="+encodeURI(email);
+            let email = await fetch(url, {
                 method: 'GET'
             });
             let result = await response.json();
