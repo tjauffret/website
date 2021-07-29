@@ -406,7 +406,7 @@
               return;
             }
             url+="?firstname="+encodeURI(firstname)+"&lastname="+encodeURI(lastname)+"&email="+encodeURI(email);
-            let email = await fetch(url, {
+            let response = await fetch(url, {
                 method: 'GET'
             });
             let result = await response.json();
