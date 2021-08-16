@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Liquichain.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B36B856CC6A026C8D35BD9098A80E9FEF22AC7CA</string>
+				<key>dateExpires</key>
+				<string>6/7/22</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>X2FUMU684Z.io.cgrade.liquichain</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>X2FUMU684Z</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>X2FUMU684Z.io.cgrade.liquichain</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>Liquichain.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>7fd42cb6-9aa7-4d4c-aee2-6325fc89f8bc</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>X2FUMU684Z</string>
+				<key>name</key>
+				<string>Carrier Grade, Inc.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
